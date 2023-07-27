@@ -44,7 +44,7 @@ ACCOUNT_ID=$(aws sts get-caller-identity --query "Account" --output text)
 echo $ACCOUNT_ID
 
 # Assume IAM Role
-aws sts assume-role --role-arn "arn:aws:iam::<REPLACE-YOUR-ACCOUNT-ID>:role/eks-admin-role" --role-session-name eksadminsession201
+aws sts assume-role --role-arn "arn:aws:iam::809346580879:role/RtsEksAdminRole" --role-session-name eksadminsession201
 
 # GET Values and replace here
 export AWS_ACCESS_KEY_ID=RoleAccessKeyID
