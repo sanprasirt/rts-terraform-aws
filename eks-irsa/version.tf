@@ -7,20 +7,15 @@ terraform {
   }
   backend "s3" {
     bucket         = "sanprasirt-eks-trs-s3"
-    key            = "dev/eks-terraform-manifests/terraform.tfstate"
+    key            = "dev/eks-irsa-manifests/terraform.tfstate"
     region         = "ap-southeast-1"
-    dynamodb_table = "eks-terraform-state"
+    dynamodb_table = "eks-irsa-state"
     profile        = "rts-aws"
   }
 }
 
 
 provider "aws" {
-  region = "ap-southeast-1"
-  # shared_config_files      = ["C:\Users\se\.aws\config"]
-  # shared_credentials_files = ["/Users/tf_user/.aws/creds"]
+  region  = "ap-southeast-1"
   profile = "rts-aws"
 }
-
-
-
