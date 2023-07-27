@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+  name: aws-auth
+  namespace: kube-system
+data:
+  mapRoles: |
+    - groups:
+      - system:bootstrappers
+      - system:nodes
+      rolearn: arn:aws:iam::809346580879:role/rts-dev-eks-nodegroup-role
+      username: system:node:{{EC2PrivateDNSName}}
+    - groups:
+      - system:masters
+      rolearn: arn:aws:iam::809346580879:role/RtsEksAdminRole
+      username: eks-admin
+
